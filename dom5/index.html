@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip Calculator</title>
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            background-color: #f5f5f5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .calculator-card {
+            background-color: #ffffff;
+            width: 360px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+
+        .header {
+            background-color: #ededed;
+            padding: 20px;
+            text-align: center;
+            font-size: 24px;
+            color: #555555;
+            font-weight: normal;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .input-group {
+            padding: 10px 20px;
+        }
+
+        .row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #f0f0f0;
+        }
+
+        /* Remove bottom border from the last item in a group */
+        .row:last-child {
+            border-bottom: none;
+        }
+
+        .divider {
+            height: 1px;
+            background-color: #dcdcdc;
+            margin: 0 20px;
+        }
+
+        .label {
+            font-size: 18px;
+            color: #666666;
+        }
+        
+        .label.dashed {
+            border-bottom: 1px dashed #aaaaaa;
+            display: inline-block;
+            line-height: 1;
+        }
+
+        .value-container {
+            display: flex;
+            align-items: center;
+            font-size: 22px;
+            color: #333333;
+        }
+
+        .value-input {
+            font-size: 22px;
+            border: 1px solid #cccccc;
+            border-radius: 8px;
+            width: 60px;
+            text-align: center;
+            padding: 4px;
+            margin-right: 8px;
+            color: #333333;
+        }
+
+        /* Static output values styling */
+        .value-text {
+            margin-right: 8px;
+            font-size: 22px;
+            width: 60px;
+            text-align: right;
+        }
+
+        .unit {
+            color: #888888;
+            font-size: 18px;
+            width: 15px;
+        }
+
+        .button-container {
+            background-color: #000000;
+            padding: 15px;
+            text-align: center;
+        }
+
+        .btn-calculate {
+            background: none;
+            border: none;
+            color: #2f80ed;
+            font-size: 22px;
+            cursor: pointer;
+            width: 100%;
+            font-weight: 500;
+        }
+    </style>
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <div class="calculator-card">
+        <!-- Header Section -->
+        <div class="header">
+            Tip Calculator
+        </div>
+
+        <!-- Upper Inputs Group -->
+        <div class="input-group">
+            <div class="row">
+                <span class="label dashed">Bill</span>
+                <div class="value-container">
+                    <input id="bill-input" type="text" class="value-input" value="80">
+                    <span class="unit">$</span>
+                </div>
+            </div>
+            <div class="row">
+                <span class="label">Tip</span>
+                <div class="value-container">
+                    <input id="tip-input" type="text" class="value-input" value="15">
+                    <span class="unit">%</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Section Divider Line -->
+        <div class="divider"></div>
+
+        <!-- Lower Outputs Group -->
+        <div class="input-group">
+            <div class="row">
+                <span class="label">Tip amount</span>
+                <div class="value-container">
+                    <span id ="tip-output" class="value-text">12</span>
+                    <span class="unit">$</span>
+                </div>
+            </div>
+            <div class="row">
+                <span class="label">Total</span>
+                <div class="value-container">
+                    <span id="total-output" class="value-text">92</span>
+                    <span class="unit">$</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Footer Action Button -->
+        <div class="button-container">
+            <button id="btn" class="btn-calculate">Calculate</button>
+        </div>
+    </div>
+
+</body>
+</html>
